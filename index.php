@@ -3,6 +3,11 @@
 <body>
     <h2>Movie Database Submission Form</h2>
 
+<?php
+// Fetch genres from the database to populate the genre dropdown list
+include 'fetch_genres.php';
+?>
+
 <!-- Form for submitting a movie to db -->
 <form action="/submit_movie.php" method="post">
     <!-- Movie name -->
@@ -16,10 +21,12 @@
     <!-- Genre dropdown list -->
     <label for="mgenre">Movie genre:</label><br>
     <select id="mgenre" name="mgenre">
-        <option value="Action/Adventure">Action/Adventure</option>
-        <option value="Comedy">Comedy</option>
-        <option value="Drama">Drama</option>
-        <option value="Fantasy/Sci-Fi">Fantasy/Sci-Fi</option>
+        <?php
+        // Populate the genre dropdown list with genres fetched from the database
+        foreach ($result as $genre) {
+            echo "<option value='" . $genre['mgenre'] . "'>" . $genre['mgenre'] . "</option>";
+        }
+        ?>
     </select><br><br>
 
     <!-- Movie rating 1-5 -->
