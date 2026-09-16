@@ -44,7 +44,22 @@ the output will be the contents of the table
 
 ## index.php
 
-front page
+front page, auto finds this if the url doesn't specify
 
 ## Insert_data.html
 
+A form is a collection of fields for the user to input data. Can bundle the input and send it to a page.
+
+## Insertdata.php
+
+Line 16-21,
+the $_POST var is a place for information that has been sent using the POST method. Managed by PHP/webserver, not me
+
+Line 23,
+has to do with sql injection and what comes later. the ? are placeholders.
+
+Line 27,
+why have we asked for the id in the first place? the id column is the PK and automatically handled by the database. We don't bother micromanaging it.
+
+Line 36,
+close the db connection because we are done working with it.
