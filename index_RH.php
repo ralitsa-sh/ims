@@ -5,11 +5,11 @@
 
 <?php
 // Fetch genres from the database to populate the genre dropdown list
-include 'fetch_genres.php';
+include 'fetch_genres_RH.php';
 ?>
 
 <!-- Form for submitting a movie to db -->
-<form action="/submit_movie.php" method="post">
+<form action="/submit_movie_RH.php" method="post">
     <!-- Movie name -->
     <label for="mname">Movie name:</label><br>
     <input type="text" id="mname" name="mname"><br><br>
@@ -23,7 +23,7 @@ include 'fetch_genres.php';
     <select id="mgenre" name="mgenre">
         <?php
         // Populate the genre dropdown list with genres fetched from the database
-        foreach ($result as $genre) {
+        foreach ($result_genres as $genre) {
             echo "<option value='" . $genre['mgenre'] . "'>" . $genre['mgenre'] . "</option>";
         }
         ?>
@@ -41,7 +41,7 @@ include 'fetch_genres.php';
 
 <!-- Link to showmovies.php -->
  <br>
- <a href="showmovies.php">View All Movies</a>
+ <a href="showmovies_RH.php">View All Movies</a>
 
  </body>
 </html>
