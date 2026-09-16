@@ -5,7 +5,7 @@
 <h2>Movie Submission Result</h2>
 
 <!-- Link back to showmovies.php -->
-<a href="index.php">Return to form</a><br><br>
+<a href="index_RH.php">Return to form</a><br><br>
 
 <!-- Process the submitted movie data -->
 <?php
@@ -15,19 +15,8 @@ $myear = $_POST['myear'];
 $mgenre = $_POST['mgenre'];
 $mrating = $_POST['mrating'];
 
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "movie_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Open a connection to the database
+include 'db_open_RH.php';
 
 // Lookup the genre ID based on the selected genre name
 $sql_genre_id = "SELECT gid FROM genres WHERE mgenre = ?";
@@ -60,6 +49,10 @@ if ($result) {
 
 // Close the database connection
 $conn->close();
+
+// Redirect to index_RH.php
+header("Location: " . "index_RH.php");
+die();
 ?>
 
 </body>
