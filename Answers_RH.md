@@ -41,3 +41,10 @@ Line 19-25,
 check that the table isn't empty
 loop over rows to print the html with values
 the output will be the contents of the table
+
+## index.php
+
+front page
+
+## Insert_data.html
+
