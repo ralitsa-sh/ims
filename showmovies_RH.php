@@ -2,10 +2,7 @@
 <html>
 <head>
 <style>
-    /* table {
-        border-spacing: 30px;
-    } */
-    th, td {
+    th, td { /* Add padding and alignment to table cells */
         text-align: left;
         padding-right: 20px;
     }
