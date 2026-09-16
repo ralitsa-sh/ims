@@ -40,5 +40,8 @@ include 'fetch_genres.php';
 
 
 <!-- Link to showmovies.php -->
+ <br>
+ <a href="showmovies.php">View All Movies</a>
 
+ </body>
 </html>
